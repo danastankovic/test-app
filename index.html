@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <!-- TITLE -->
+    <title>app</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,700i,800&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="./assets/lib/bootstrap/css/bootstrap.css" />
+
+    <!-- Main Stylesheet File -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container-fluid">
+
+
+
+            <div class="header">
+                <div class="left-part">
+                    <img src="./assets/images/svg/tag.svg" alt="Tags table" />
+                    <h3>TAGS</h3>
+
+                </div>
+                <!--left-part-->
+                <div class="right-part">
+                    <button class="new-tag" data-toggle="modal" data-target="#add-new-tag">
+                        <img src="./assets/images/svg/plus.svg" alt="New tag">
+                        <h5>New</h5>
+                    </button>
+                    <!--.new-tag-->
+                    <div class="tag-types">
+                        <img src="./assets/images/svg/grid.svg" alt="Tag types">
+                        <h5>Tag types</h5>
+                    </div>
+                    <!--tag-types-->
+                </div>
+                <!--right-part-->
+            </div>
+            <!--.header-->
+
+        </div>
+        <!--.container-fluid-->
+
+        <div class="container-fluid filtering">
+            <form action="" method="get">
+                <div class="table-wrapper table-responsive">
+                    <table id="table_id" class="table table-bordered table-striped">
+                        <thead>
+                            <tr role="row">
+                                <th><input type="text" class="form-control search-kw" id="fn-sarch-tag-id" /></th>
+                                <th><input type="text" class="form-control search-kw" id="fn-search-tag-name"
+                                        placeholder="Searh here" /></th>
+                                <th><input type="text" class="form-control search-kw" value="" /></th>
+                                <th>
+                                    <select class="form-control fn-feed" id='feed'>
+                                        <option value="feed-all">All </option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </th>
+                                <th>
+                                    <select class="form-control" id="favorites">
+                                        <option value="all">All </option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </th>
+                                <th class="empty-th">
+
+                                </th>
+                            </tr>
+                            <tr role="row">
+                                <th>Tag ID</th>
+                                <th>Tag Name</th>
+                                <th>Tag Type</th>
+                                <th>My Feed</th>
+                                <th>My Favorites</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="content">
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <!--table-wrapper-->
+            </form>
+            <!--form-->
+            <!-- The Modal -->
+            <div class="modal" id="add-new-tag">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Tag</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form action="">
+                                <div class="form-group">
+                                    <label for="name">Name *</label>
+                                    <input type="text" class="form-control" id="name">
+                                </div>
+                                <!--form-group-->
+                                <div class="chaeck-box">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="checkbox-feed">
+                                        <label class="form-check-label" for="checkbox-feed">My Feed</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="checkbox-favorites">
+                                        <label class="form-check-label" for="checkbox-favorites">My Favorites</label>
+                                    </div>
+                                </div>
+                                <!--.check-box-->
+                                <div class="form-group">
+                                    <label for="select-tad">Type<span>(Changing tag type will after the entire tag, loss
+                                            of information may occur.)</span></label>
+                                    <select class="form-control" id="select-tag">
+                                        <option>Fudbalski klub</option>
+                                        <option>Kosarkaski klub</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <!--.form-group select-->
+                                <div >
+                                        <div class="center-div">
+                                             <label for="" class="upload-box">
+                                                    <img src='./assets/images/svg/add-gray.svg' alt="Upload Photo"
+                                                    class="upload-icon" />
+                                                Add photo
+                                               
+                                        <input type="file" accept=".jpg,.jpeg,.png"/>
+                                             </label>
+                                        <div class="preview"></div>
+                                    </div>
+                                    <!-- <label for="file-upload" class="custom-file-upload">
+                                        <div class="center-div">
+                                            <img src='./assets/images/svg/add-gray.svg' alt="Upload Photo"
+                                                class="upload-icon" />
+                                            Add photo
+                                    </label>
+
+                                </div>
+                                <input id="file-upload" type="file" />
+                                <img id="myImg" src="#" alt="your image" height=200 width=100> -->
+
+                        </div>
+                        <!--upload-box-->
+
+                        </form>
+                        <!--form-->
+                    </div>
+                    <!--Modal-->
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--container-fluid-->
+    </div>
+    <!--.wrapper-->
+
+    <!-- JavaScript Libraries -->
+    <script src="./assets/lib/jquery/jquery.min.js"></script>
+    <script src="./assets/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="./assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Main Javascript File -->
+    <script src="./assets/js/main.js"></script>
+
+    <!---->
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+</body>
+
+</html>
