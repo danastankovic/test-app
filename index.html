@@ -64,8 +64,9 @@
                                         placeholder="Searh here" /></th>
                                 <th><input type="text" class="form-control search-kw" value="" /></th>
                                 <th>
-                                    <select class="form-control fn-feed" id='feed'>
-                                        <option value="feed-all">All </option>
+                                    <select class="form-control fn-feed" id='feed' onchange='filterText()'>
+                                          
+                                        <option value="all">All </option>
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
                                     </select>
@@ -90,7 +91,7 @@
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody class="content">
+                        <tbody class="tag-table">
 
                         </tbody>
                     </table>
@@ -118,9 +119,9 @@
                                     <input type="text" class="form-control" id="name">
                                 </div>
                                 <!--form-group-->
-                                <div class="chaeck-box">
+                                <div class="check-box">
                                     <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="checkbox-feed">
+                                        <input type="checkbox" class="form-check-input" id="checkbox-feed" value="feed">
                                         <label class="form-check-label" for="checkbox-feed">My Feed</label>
                                     </div>
                                     <div class="form-check">
@@ -135,52 +136,63 @@
                                     <select class="form-control" id="select-tag">
                                         <option>Fudbalski klub</option>
                                         <option>Kosarkaski klub</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                        <option>Fudbaler</option>
+                                        <option>Kosarkas</option>
+                                        <option>teniser</option>
                                     </select>
                                 </div>
                                 <!--.form-group select-->
-                                <div >
-                                        <div class="center-div">
-                                             <label for="" class="upload-box">
-                                                    <img src='./assets/images/svg/add-gray.svg' alt="Upload Photo"
-                                                    class="upload-icon" />
-                                                Add photo
-                                               
-                                        <input type="file" accept=".jpg,.jpeg,.png"/>
-                                             </label>
-                                        <div class="preview"></div>
-                                    </div>
-                                    <!-- <label for="file-upload" class="custom-file-upload">
-                                        <div class="center-div">
-                                            <img src='./assets/images/svg/add-gray.svg' alt="Upload Photo"
-                                                class="upload-icon" />
-                                            Add photo
-                                    </label>
+                                <div>
 
-                                </div>
-                                <input id="file-upload" type="file" />
-                                <img id="myImg" src="#" alt="your image" height=200 width=100> -->
+                                    <div class="logo-upload clearfix">
+                                        <div class="section-title">
+                                            <span class="title">Photo</span>
+                                        </div>
 
+                                        <div class="upload-box">
+                                            <div class="drag-box">
+                                                <div id="preview"></div>
+                                                <div class="drag-box-center">
+
+                                                    <div class="progress-bar-wrapper">
+                                                        <span>Uploading...</span>
+                                                            <div class="progress-bar">
+                                                                    <span class="progress-bar-fill" style="width: 70%;"></span>
+                                                                </div>
+                                                    </div>
+                                                  <div class="hide-div">
+                                                        <img src='./assets/images/svg/add-gray.svg' alt="Upload Photo"
+                                                        class="upload-icon" />
+                                                  <span> Add photo</span>
+                                                  </div>
+
+                                                </div>
+                                                <input type="file" id="upload-file" onChange="dragNdrop(event);"
+                                                    ondragover="drag()" ondrop="drop()" />
+                                            </div>
+                                            <!--drag-box-->
+                                            <button id="btn" class="upload-btn" onclick="addImageInPlaceholder();">
+                                              </button>
+                                        </div>
+                                           </div>
+                                    <!--upload-box-->
+
+                            </form>
+                            <!--form-->
                         </div>
-                        <!--upload-box-->
+                        <!--Modal-->
 
-                        </form>
-                        <!--form-->
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-save" >Save</button>
+                        </div>
+
                     </div>
-                    <!--Modal-->
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
-
                 </div>
             </div>
         </div>
-    </div>
-    <!--container-fluid-->
+        <!--container-fluid-->
     </div>
     <!--.wrapper-->
 
