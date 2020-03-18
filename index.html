@@ -19,14 +19,13 @@
 
     <!-- Main Stylesheet File -->
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen"
+        href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
 </head>
 
 <body>
     <div class="wrapper">
         <div class="container-fluid">
-
-
-
             <div class="header">
                 <div class="left-part">
                     <img src="./assets/images/svg/tag.svg" alt="Tags table" />
@@ -59,14 +58,20 @@
                     <table id="table_id" class="table table-bordered table-striped">
                         <thead>
                             <tr role="row">
-                                <th><input type="text" class="form-control search-kw" id="fn-sarch-tag-id" /></th>
-                                <th><input type="text" class="form-control search-kw" id="fn-search-tag-name"
-                                        placeholder="Searh here" /></th>
-                                <th><input type="text" class="form-control search-kw" value="" /></th>
+                                <th style="width: 10%;">
+                                    <input type="text" class="form-control search-kw" id="fn-sarch-tag-id" />
+                                </th>
+                                <th>
+                                    <input type="text" class="form-control search-kw" id="fn-search-tag-name" />
+                                </th>
+                                <th>
+                                    <input type="text" class="form-control search-kw" value=""
+                                        id="fn-search-tag-type" />
+                                </th>
                                 <th>
                                     <select class="form-control fn-feed" id='feed' onchange='filterText()'>
-                                          
-                                        <option value="all">All </option>
+
+                                        <option value="all-feed">All </option>
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
                                     </select>
@@ -156,15 +161,15 @@
 
                                                     <div class="progress-bar-wrapper">
                                                         <span>Uploading...</span>
-                                                            <div class="progress-bar">
-                                                                    <span class="progress-bar-fill" style="width: 70%;"></span>
-                                                                </div>
+                                                        <div class="progress-bar">
+                                                            <span class="progress-bar-fill" style="width: 70%;"></span>
+                                                        </div>
                                                     </div>
-                                                  <div class="hide-div">
+                                                    <div class="hide-div">
                                                         <img src='./assets/images/svg/add-gray.svg' alt="Upload Photo"
-                                                        class="upload-icon" />
-                                                  <span> Add photo</span>
-                                                  </div>
+                                                            class="upload-icon" />
+                                                        <span> Add photo</span>
+                                                    </div>
 
                                                 </div>
                                                 <input type="file" id="upload-file" onChange="dragNdrop(event);"
@@ -172,29 +177,58 @@
                                             </div>
                                             <!--drag-box-->
                                             <button id="btn" class="upload-btn" onclick="addImageInPlaceholder();">
-                                              </button>
+                                            </button>
                                         </div>
-                                           </div>
+                                    </div>
                                     <!--upload-box-->
-
                             </form>
                             <!--form-->
                         </div>
-                        <!--Modal-->
+
 
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-save" >Save</button>
+                            <button type="button" class="btn btn-save">Save</button>
                         </div>
-
                     </div>
+                    <!--Modal content-->
                 </div>
+                <!--modal-dialog-->
             </div>
+            <!--MODAL-->
+
+
+            <!-- The Modal -->
+
         </div>
-        <!--container-fluid-->
+      
     </div>
-    <!--.wrapper-->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Modal Heading</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+          
+            </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn-save-modal" data-dismiss="modal">Close</button>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+      <!-- MODAL -->
+    </div>
 
     <!-- JavaScript Libraries -->
     <script src="./assets/lib/jquery/jquery.min.js"></script>
@@ -206,6 +240,8 @@
 
     <!---->
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src=""></script>
+
 </body>
 
 </html>
